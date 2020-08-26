@@ -6,7 +6,7 @@ import Router from 'vue-router'
 import Dashboard from '@/containers/Dashboard'
 import HelloWorld from '@/components/HelloWorld'
 import Persons from '@/components/Persons'
-import Supplier from '@/components/Supplier'
+import Suppliers from '@/components/Suppliers'
 
 Vue.use(Router)
 
@@ -34,7 +34,7 @@ export default new Router({
         {
           path: 'suppliers',
           name: 'Suppliers',
-          component: Supplier
+          component: Suppliers
         }
       ]
     }

@@ -9,7 +9,7 @@
 
       <el-row :gutter="20">
         <!-- LEFT COLUMN -->
-        <el-col :span="6">
+        <el-col :span="8">
 
           <el-form-item label="Εισάγετε το όνομα της Εταιρείας"
                         prop="companyName">
@@ -39,9 +39,8 @@
           </el-form-item>
 
         </el-col>
-
         <!-- MIDDLE COLUMN-->
-      <el-col :span="6">
+      <el-col :span="8">
             <el-form-item label="Εισάγετε Όνομα"
                         prop="firstName">
             <el-input prefix-icon="fa fa-user"
@@ -71,7 +70,7 @@
       </el-col>
 
         <!-- RIGHT COLUMN -->
-        <el-col :span="6">
+        <el-col :span="8">
 
           <el-form-item label="Εισάγετε Ταχυδρομικό Κώδικα"
                         prop="zipCpde">
