@@ -75,7 +75,7 @@
           <el-form-item label="Εισάγετε Ταχυδρομικό Κώδικα"
                         prop="zipCpde">
             <el-input prefix-icon="fa fa-user"
-                      v-model="supplier.zipCpde"
+                      v-model="supplier.zipCode"
                       placeholder="Ταχυδρομικός κώδικα"
                       autoComplete="zipCpde">
             </el-input>

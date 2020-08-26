@@ -38,7 +38,7 @@ export default {
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
-        zipCpde: {
+        zipCode: {
           required: false,
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
@@ -158,7 +158,7 @@ export default {
 
 /**
  * Create a new totally empty Supplier
- * @returns {{id: null, companyName: string, firstName: string, lastName: string, vatNumber: string, irsOffice: string, address: string, zipCpde: string, city: string, country: string}}
+ * @returns {{id: null, companyName: string, firstName: string, lastName: string, vatNumber: string, irsOffice: string, address: string, zipCode: string, city: string, country: string}}
  */
 function initSupplier () {
   return {
@@ -169,7 +169,7 @@ function initSupplier () {
     vatNumber: '',
     irsOffice: '',
     address: '',
-    zipCpde: '',
+    zipCode: '',
     city: '',
     country: ''
   }
