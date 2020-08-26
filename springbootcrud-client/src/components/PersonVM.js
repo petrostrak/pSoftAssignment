@@ -110,7 +110,7 @@ export default {
     handleSuccess (response) {
       this.visible = false
       this.successFloat(this.$messages.successAction)
-      console.log('fire person-edited event')
+      console.log('fire person-edited event', response, this.person)
       this.$events.fire('person-edited', this.person)
     },
     handleError (e) {

@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     createPerson (event) {
-      console.log('fire edit-person event')
+      console.log('fire edit-person event', event)
       this.$events.fire('edit-person', null)
     },
     onPersonSelected (dataItem) {

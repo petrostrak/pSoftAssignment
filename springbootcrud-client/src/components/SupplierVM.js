@@ -122,7 +122,7 @@ export default {
     handleSuccess (response) {
       this.visible = false
       this.successFloat(this.$messages.successAction)
-      console.log('fire supplier-edited event')
+      console.log('fire supplier-edited event', this.supplier, response)
       this.$events.fire('supplier-edited', this.supplier)
     },
     handleError (e) {
