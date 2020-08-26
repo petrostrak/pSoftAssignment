@@ -6,9 +6,10 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 import static gr.publicsoft.springbootcrud.Constants.SIZE_M;
+import java.io.Serializable;
 
 @Entity
-public class Supplier {
+public class Supplier implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

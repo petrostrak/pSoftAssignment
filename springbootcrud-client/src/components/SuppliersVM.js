@@ -6,13 +6,13 @@ export default {
   },
   created () {
     this.refreshSuppliers()
-    console.log('Supplier created')
+    console.log('Suppliers created')
   },
   mounted () {
     // subscribe to the 'row-selected' event (wherever it may come from, should come from the child table component)
     this.$events.$on('row-selected', eventData => this.onSupplierSelected(eventData))
     this.$events.$on('supplier-edited', eventData => this.onSupplierEdited(eventData))
-    console.log('Supplier mounted')
+    console.log('Suppliers mounted')
   },
   beforeDestroy () {
     // un-subscribe from events
@@ -59,7 +59,7 @@ export default {
       this.$events.fire('edit-supplier', null)
     },
     onSupplierSelected (dataItem) {
-      console.log('fire edit-supplier event')
+      console.log('fire edit-supplier event', dataItem)
       this.$events.fire('edit-supplier', dataItem)
     },
     onSupplierEdited (dataItem) {

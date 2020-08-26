@@ -59,7 +59,7 @@ export default {
       this.$events.fire('edit-person', null)
     },
     onPersonSelected (dataItem) {
-      console.log('fire edit-person event')
+      console.log('fire edit-person event', dataItem)
       this.$events.fire('edit-person', dataItem)
     },
     onPersonEdited (dataItem) {

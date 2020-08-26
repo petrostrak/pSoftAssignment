@@ -8,9 +8,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import static gr.publicsoft.springbootcrud.Constants.*;
+import java.io.Serializable;
 
 @Entity
-public class Person {
+public class Person implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
