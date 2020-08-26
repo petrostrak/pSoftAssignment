@@ -5,7 +5,7 @@ export default {
     Supplier
   },
   created () {
-    this.refreshSupplier()
+    this.refreshSuppliers()
     console.log('Supplier created')
   },
   mounted () {
@@ -20,7 +20,7 @@ export default {
     this.$events.$off('supplier-edited')
   },
   destroyed () {
-    console.log('Supplier destroyed')
+    console.log('Suppliers destroyed')
   },
   data: function () {
     return {
@@ -68,7 +68,7 @@ export default {
     refreshSuppliers () {
       this.$http.get(this.url + this.query)
         .then(response => {
-          this.suppliers = response.data._embedded.supplier
+          this.suppliers = response.data._embedded.suppliers
         })
         .catch(e => {
           console.log('error: ')

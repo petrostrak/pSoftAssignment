@@ -22,6 +22,6 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     
     @Query("SELECT s FROM Supplier s "
             + "WHERE s.companyName LIKE CONCAT('%',?1,'%') "
-            + "OR s.vatNumber LIKE CONCAT('%',?1,'%')")
+            + "     OR s.vatNumber LIKE CONCAT('%',?1,'%')")
     Page<Supplier> findByQuery(@Param("query") String query, Pageable pageable);
 }
