@@ -16,14 +16,12 @@ export default {
         },
         firstName: {
           required: false,
-          min: constants.sizes.SIZE_XS,
-          max: constants.sizes.SIZE_M,
+          max: constants.sizes.SIZE_XS,
           trigger: 'blur'
         },
         lastName: {
           required: false,
-          min: constants.sizes.SIZE_XS,
-          max: constants.sizes.SIZE_M,
+          max: constants.sizes.SIZE_XS,
           trigger: 'blur'
         },
         vatNumber: {
