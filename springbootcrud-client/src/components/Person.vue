@@ -40,7 +40,6 @@
           </el-form-item>
 
         </el-col>
-
         <!-- RIGHT COLUMN -->
         <el-col :span="12">
 

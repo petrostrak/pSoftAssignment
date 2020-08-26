@@ -1,80 +1,103 @@
 <template>
-  <el-dialog type="warning" title="Διαχείριση Χρήστη" :visible="visible" :modal="true"
+  <el-dialog type="warning" title="Διαχείριση Προμηθευτή" :visible="visible" :modal="true"
              :close-on-click-modal="false"
              :close-on-press-escape="false" :modal-append-to-body="false" :show-close="false" width="75%"
              @close="clearValidation">
 
     <el-card>
-    <el-form ref="personForm" :model="person" :rules="rules" label-position="top">
+    <el-form ref="supplierForm" :model="supplier" :rules="rules" label-position="top">
 
       <el-row :gutter="20">
         <!-- LEFT COLUMN -->
-        <el-col :span="12">
+        <el-col :span="6">
 
-          <el-form-item label="Εισάγετε το όνομα"
-                        prop="name">
+          <el-form-item label="Εισάγετε το όνομα της Εταιρείας"
+                        prop="companyName">
             <el-input prefix-icon="fa fa-user"
-                      v-model="person.name"
-                      placeholder="Όνομα"
-                      autoComplete="name">
+                      v-model="supplier.companyName"
+                      placeholder="Όνομα Εταιρείας"
+                      autoComplete="companyName">
             </el-input>
           </el-form-item>
 
-          <el-form-item label="Εισάγετε αριθμό κινητού τηλεφώνου"
-                        prop="mobilePhone">
+          <el-form-item label="Εισάγετε Αριθμό Φορολογικού Μητρώου (ΑΦΜ)"
+                        prop="vatNumber">
             <el-input prefix-icon="fa fa-phone"
-                      v-model="person.mobilePhone"
-                      placeholder="Κινητό Τηλέφωνο"
-                      autoComplete="tel">
+                      v-model="supplier.vatNumber"
+                      placeholder="Αριθμός Φορολογικού Μητρώου"
+                      autoComplete="vatNumber">
             </el-input>
           </el-form-item>
 
-          <el-form-item label="Εισάγετε τη διεύθυνση Email"
-                        prop="email">
+          <el-form-item label="Εισάγετε Δημόσια Οικονομική Υπηρεσία (Δ.Ο.Υ.)"
+                        prop="irsOffice">
             <el-input prefix-icon="fa fa-envelope"
-                      v-model="person.email"
-                      type="email"
-                      placeholder="Email"
-                      autoComplete="email">
+                      v-model="supplier.irsOffice"
+                      placeholder="Δημόσια Οικονομική Υπηρεσία"
+                      autoComplete="irsOffice">
             </el-input>
           </el-form-item>
 
         </el-col>
 
-        <!-- RIGHT COLUMN -->
-        <el-col :span="12">
+        <!-- MIDDLE COLUMN-->
+      <el-col :span="6">
+            <el-form-item label="Εισάγετε Όνομα"
+                        prop="firstName">
+            <el-input prefix-icon="fa fa-user"
+                      v-model="supplier.firstName"
+                      placeholder="Όνομα"
+                      autoComplete="firstName">
+            </el-input>
+            </el-form-item>
 
-          <el-form-item label="Συμπληρώστε προαιρετικά σχόλια"
-                        prop="comments">
-            <el-input type="textarea"
-                      :rows="3"
-                      prefix-icon="fa fa-comment-o"
-                      v-model="person.comments"
-                      placeholder="Σχόλια">
+          <el-form-item label="Εισάγετε Επίθετο"
+                        prop="lastName">
+            <el-input prefix-icon="fa fa-user"
+                      v-model="supplier.lastName"
+                      placeholder="Επίθετο"
+                      autoComplete="lastName">
             </el-input>
           </el-form-item>
 
-          <el-form-item label="Επιλέξτε Φύλλο" prop="gender">
-            <template>
-              <el-select v-model="person.gender"
-                         placeholder="Φύλλο"
-                         value-key="id"
-                         filterable
-                         clearable>
-                <el-option
-                  v-for="item in genderOptions"
-                  :key="item.id"
-                  :label="item.title"
-                  :value="item">
-                </el-option>
-              </el-select>
-            </template>
+          <el-form-item label="Εισάγετε Διεύθυνση"
+                        prop="address">
+            <el-input prefix-icon="fa fa-envelope"
+                      v-model="supplier.address"
+                      placeholder="Διεύθυνση"
+                      autoComplete="address">
+            </el-input>
+          </el-form-item>
+      </el-col>
+
+        <!-- RIGHT COLUMN -->
+        <el-col :span="6">
+
+          <el-form-item label="Εισάγετε Ταχυδρομικό Κώδικα"
+                        prop="zipCpde">
+            <el-input prefix-icon="fa fa-user"
+                      v-model="supplier.zipCpde"
+                      placeholder="Ταχυδρομικός κώδικα"
+                      autoComplete="zipCpde">
+            </el-input>
           </el-form-item>
 
-          <el-form-item prop="active">
-            <template>
-              <el-checkbox v-model="person.active">Ενεργό</el-checkbox>
-            </template>
+          <el-form-item label="Εισάγετε Πόλη"
+                        prop="city">
+            <el-input prefix-icon="fa fa-user"
+                      v-model="supplier.city"
+                      placeholder="Πόλη"
+                      autoComplete="city">
+            </el-input>
+          </el-form-item>
+
+          <el-form-item label="Εισάγετε Χώρα"
+                        prop="country">
+            <el-input prefix-icon="fa fa-user"
+                      v-model="supplier.country"
+                      placeholder="Χώρα"
+                      autoComplete="country">
+            </el-input>
           </el-form-item>
 
         </el-col>
@@ -104,4 +127,4 @@
 
   </el-dialog>
 </template>
-<script src="./PersonVM.js"></script>
+<script src="./SupplierVM.js"></script>
