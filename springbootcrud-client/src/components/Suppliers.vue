@@ -12,7 +12,7 @@
               <el-input
                 v-model="query"
                 placeholder="Search"
-                autoComplete="companyName">
+                autoComplete="name">
               </el-input>
               </el-col>
               <el-col :span="0.2"><div class="grid-content bg-purple">&nbsp;</div></el-col>
