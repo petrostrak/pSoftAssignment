@@ -16,12 +16,12 @@ export default {
         },
         firstName: {
           required: false,
-          max: constants.sizes.SIZE_XS,
+          max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
         lastName: {
           required: false,
-          max: constants.sizes.SIZE_XS,
+          max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
         vatNumber: {
@@ -31,6 +31,7 @@ export default {
         },
         irsOffice: {
           required: false,
+          max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
         address: {
@@ -44,9 +45,9 @@ export default {
           trigger: 'blur'
         },
         city: {
-            required: false,
-            max: constants.sizes.SIZE_M,
-            trigger: 'blur'
+          required: false,
+          max: constants.sizes.SIZE_M,
+          trigger: 'blur'
         },
         country: {
           required: false,
@@ -122,7 +123,7 @@ export default {
     handleSuccess (response) {
       this.visible = false
       this.successFloat(this.$messages.successAction)
-      console.log('fire supplier-edited event', this.supplier, response)
+      console.log('fire supplier-edited event', response, this.supplier)
       this.$events.fire('supplier-edited', this.supplier)
     },
     handleError (e) {
@@ -143,8 +144,8 @@ export default {
       })
     },
     transformRequest (data) {
-      if (data.vatNumber === '') {
-        delete data.vatNumber
+      if (data.companyName === '') {
+        delete data.companyName
       }
       return JSON.stringify(data)
     },
