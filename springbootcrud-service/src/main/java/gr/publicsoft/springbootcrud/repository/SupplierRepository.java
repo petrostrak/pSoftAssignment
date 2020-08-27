@@ -20,12 +20,6 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     
     Supplier findByCompanyName(String companyName);
     Supplier findByVatNumber(String vatNumber);
-
-    /**
-     *
-     * @param id
-     * @return
-     */
     List<Supplier> findById(long id);
     
     @Query("SELECT s FROM Supplier s "
@@ -33,8 +27,4 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
             + "     OR s.vatNumber LIKE CONCAT('%',?1,'%')")
     Page<Supplier> findByQuery(@Param("query") String query, Pageable pageable);
     
-    @Query("SELECT COUNT(s) FROM Supplier s "
-                 + "WHERE s.companyName IS NOT NULL "
-                 + "     AND s.vatNumber IS NOT NULL")
-    Long countActiveSuppliers();
 }
