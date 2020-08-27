@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     createSupplier (event) {
-      console.log('fire edit-supplier event')
+      console.log('fire edit-supplier event', event)
       this.$events.fire('edit-supplier', null)
     },
     onSupplierSelected (dataItem) {
