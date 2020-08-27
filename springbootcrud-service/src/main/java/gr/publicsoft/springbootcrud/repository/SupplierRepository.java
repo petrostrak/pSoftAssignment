@@ -1,7 +1,6 @@
 package gr.publicsoft.springbootcrud.repository;
 
 import gr.publicsoft.springbootcrud.model.Supplier;
-import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,7 +19,6 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
     
     Supplier findByCompanyName(String companyName);
     Supplier findByVatNumber(String vatNumber);
-    List<Supplier> findById(long id);
     
     @Query("SELECT s FROM Supplier s "
             + "WHERE s.companyName LIKE CONCAT('%',?1,'%') "
