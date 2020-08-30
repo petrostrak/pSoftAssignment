@@ -9,12 +9,32 @@ export default {
       context: 'Supplier',
       supplier: initSupplier(),
       rules: {
+        address: {
+          required: false,
+          max: constants.sizes.SIZE_M,
+          trigger: 'blur'
+        },
+        city: {
+          required: false,
+          max: constants.sizes.SIZE_M,
+          trigger: 'blur'
+        },
         companyName: {
           required: true,
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
+        country: {
+          required: false,
+          max: constants.sizes.SIZE_M,
+          trigger: 'blur'
+        },
         firstName: {
+          required: false,
+          max: constants.sizes.SIZE_M,
+          trigger: 'blur'
+        },
+        irsOffice: {
           required: false,
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
@@ -29,27 +49,7 @@ export default {
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
         },
-        irsOffice: {
-          required: false,
-          max: constants.sizes.SIZE_M,
-          trigger: 'blur'
-        },
-        address: {
-          required: false,
-          max: constants.sizes.SIZE_M,
-          trigger: 'blur'
-        },
         zipCode: {
-          required: false,
-          max: constants.sizes.SIZE_M,
-          trigger: 'blur'
-        },
-        city: {
-          required: false,
-          max: constants.sizes.SIZE_M,
-          trigger: 'blur'
-        },
-        country: {
           required: false,
           max: constants.sizes.SIZE_M,
           trigger: 'blur'
@@ -159,19 +159,19 @@ export default {
 
 /**
  * Create a new totally empty Supplier
- * @returns {{id: null, companyName: string, firstName: string, lastName: string, vatNumber: string, irsOffice: string, address: string, zipCode: string, city: string, country: string}}
+ * @returns {{id: null, address: string, city: string, companyName: string, country: string, firstName: string, irsOffice: string, lastName: string, vatNumber: string, zipCode: string}}
  */
 function initSupplier () {
   return {
     id: null,
+    address: '',
+    city: '',
     companyName: '',
+    country: '',
     firstName: '',
+    irsOffice: '',
     lastName: '',
     vatNumber: '',
-    irsOffice: '',
-    address: '',
     zipCode: '',
-    city: '',
-    country: ''
   }
 }

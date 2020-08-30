@@ -2,20 +2,44 @@
 
 > springbootcrud Web Client
 
-## Build Setup
+## Supplier entity
+``` bash
+# Successfully store Supplier entities in DB
+Added createDatabaseIfNotExist=true parameter in application.properties and liquibase.properties for improving test efficiency
+# Created CRUD
+Added complete CRUD operations for the Supplier entity
+# Search API
+Added Search by companyName and vatNumber using Hibernate Query Language
+# Suppliers Tab
+Added suppliers tab to serve our purposes that is listening to http://localhost:9000/#/suppliers
+```
+## Build Setup Server-side
+
+``` bash
+# install dependencies
+Clean
+Build with Dependencies
+
+# serve
+Run Application.java
+This step will also create our DB automatically
+```
+
+## Build Setup Client-side
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+or
+npm run start (this will trigger npm run dev)
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Using the Web App
+
+``` bash
+# Visit
+http://localhost:9000
+```
